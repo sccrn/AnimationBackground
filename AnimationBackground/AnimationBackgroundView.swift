@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnimationBackgroundView: UIView {
+public class AnimationBackgroundView: UIView {
 
     var firstColor = UIColor(red: 178/255.0, green: 164/255.0, blue: 181/255.0, alpha: 1.0)
     var secondColor = UIColor(red: 163/255.0, green: 11/255.0, blue: 55/255.0, alpha: 1.0)
@@ -30,7 +30,7 @@ class AnimationBackgroundView: UIView {
         scheduledColorChanged.fire()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         // You don't need to implement this

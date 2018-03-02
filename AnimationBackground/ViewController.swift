@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 
-class ViewController: UIViewController {
+public class ViewController: UIViewController {
     
-        override func viewDidLoad() {
+    override public func viewDidLoad() {
         let fantasticView = AnimationBackgroundView(frame: self.view.bounds)
             self.view.addSubview(fantasticView)
     }
