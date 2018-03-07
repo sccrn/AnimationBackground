@@ -15,5 +15,6 @@ public class ViewController: UIViewController {
     override public func viewDidLoad() {
         let fantasticView = AnimationBackgroundView(frame: self.view.bounds)
             self.view.addSubview(fantasticView)
-    }
+    
+}
 }

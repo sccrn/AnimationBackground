@@ -16,15 +16,16 @@ public class AnimationBackgroundView: UIView {
     var fourthColor = UIColor(red: 97/255.0, green: 48/255.0, blue: 75/255.0, alpha: 1.0)
     var fifthColor = UIColor(red: 119/255.0, green: 33/255.0, blue: 132/255.0, alpha: 1.0)
     
-    var colorCounter = 0
+    var colorCounter = UIColor!.self
     override init(frame: CGRect) {
         super.init(frame: frame)
-             var colors: [UIColor] = [self.firstColor, self.secondColor, self.thirdColor, self.fourthColor, self.fifthColor]
+        let colors: [UIColor] = [self.firstColor, self.secondColor, self.thirdColor, self.fourthColor, self.fifthColor]
         let scheduledColorChanged = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { (timer) in  //1
-            UIView.animate(withDuration: 2.5) {  //2
-                self.layer.backgroundColor = colors[self.colorCounter % 6].cgColor  //3
-                self.colorCounter+=1  //4
-            }
+            UIView.animate(withDuration: 1, animations: {
+                colors.forEach { color in
+                    self.layer.backgroundColor = color.cgColor
+                }
+            }, completion: nil)
         }
         
         scheduledColorChanged.fire()
